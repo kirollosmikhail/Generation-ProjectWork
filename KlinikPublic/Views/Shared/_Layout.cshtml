@@ -1,0 +1,334 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - KlinikPublic</title>
+
+    @* ------ Icona del logo dell'azienza in alto alla pagina ------ *@
+    <link rel="icon" type="image/x-icon" href="/img/icona1.png">
+
+
+    @* ------------ LINK DI BOOTSTRAP, CSS, JAVASCRIPT -------------- *@
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/KlinikPublic.styles.css" asp-append-version="true" />
+    <script src="~/js/site.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://kit.fontawesome.com/8ef5b2efcb.js" crossorigin="anonymous"></script>
+
+    @* <%-- Faccio comparire campi del recupera password, scompare login --%> *@
+    <script>
+        function PopupRecuperaPWD() {
+            $(function () {
+                document.getElementById("panelLogin").classList.add("hidden");
+                document.getElementById("panelRecuperaPWD").removeAttribute("hidden");
+                document.getElementById("panelRegistra").classList.add("hidden");
+                document.getElementById("panelBtnAccedi").classList.add("hidden");
+                document.getElementById("panelBtnRecuperaPWD").removeAttribute("hidden");
+                document.getElementById("panelBtnRegistra").classList.add("hidden");
+                document.getElementById("panelLinkReset").classList.add("hidden");
+                document.getElementById("panelLinkSignup").classList.add("hidden");
+                document.getElementById("panelLinkLogin").removeAttribute("hidden");
+                document.getElementById("txtMail").setAttribute("required", "true");
+                document.getElementById("txtUSR").removeAttribute("required", "true");
+                document.getElementById("txtPWD").removeAttribute("required", "true");
+                document.getElementById("txtRegistraMail").removeAttribute("required", "true");
+                document.getElementById("txtRegistraPWD").removeAttribute("required", "true");
+                document.getElementById("txtRegistraConfermaPWD").removeAttribute("required", "true");
+            });
+        }
+    </script>
+
+    @* <%-- Faccio comparire i campi del login, scompare recupera pwd --%> *@
+    <script>
+        function Login() {
+            $(function () {
+                document.getElementById("panelLogin").classList.remove("hidden");
+                document.getElementById("panelRecuperaPWD").classList.add("hidden");
+                document.getElementById("panelRegistra").classList.add("hidden");
+                document.getElementById("panelBtnAccedi").classList.remove("hidden");
+                document.getElementById("panelBtnRecuperaPWD").classList.add("hidden");
+                document.getElementById("panelBtnRegistra").classList.add("hidden");
+                document.getElementById("panelLinkReset").classList.remove("hidden");
+                document.getElementById("panelLinkSignup").classList.remove("hidden");
+                document.getElementById("panelLinkLogin").classList.add("hidden");
+                document.getElementById("txtMail").removeAttribute("required", "true");
+                document.getElementById("txtUSR").setAttribute("required", "true");
+                document.getElementById("txtPWD").setAttribute("required", "true");
+                document.getElementById("txtRegistraMail").removeAttribute("required", "true");
+                document.getElementById("txtRegistraPWD").removeAttribute("required", "true");
+                document.getElementById("txtRegistraConfermaPWD").removeAttribute("required", "true");
+            });
+        }
+    </script>
+
+    @* <%-- Apertura inserimentoPaziente --%> *@
+    <script>
+        function Registra() {
+
+            document.getElementById("panelLogin").classList.add("hidden");
+            document.getElementById("panelRecuperaPWD").classList.add("hidden");
+            document.getElementById("panelRegistra").classList.remove("hidden");
+            document.getElementById("panelBtnAccedi").classList.add("hidden");
+            document.getElementById("panelBtnRecuperaPWD").classList.add("hidden");
+            document.getElementById("panelBtnRegistra").classList.remove("hidden");
+            document.getElementById("panelLinkReset").classList.add("hidden");
+            document.getElementById("panelLinkSignup").classList.add("hidden");
+            document.getElementById("panelLinkLogin").classList.remove("hidden");
+            document.getElementById("txtMail").removeAttribute("required", "true");
+            document.getElementById("txtUSR").removeAttribute("required", "true");
+            document.getElementById("txtPWD").removeAttribute("required", "true");
+            document.getElementById("txtRegistraMail").setAttribute("required", "true");
+            document.getElementById("txtRegistraPWD").setAttribute("required", "true");
+            document.getElementById("txtRegistraConfermaPWD").setAttribute("required", "true");
+        }
+    </script>
+
+</head>
+
+
+<body class="hero-anime">
+
+    @* ---------------------- INIZIO NAVBAR ----------------- *@
+
+    <div class="navigation-wrap bg-light start-header start-style" style="background-color: #305580 !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light">
+
+                        <img src="~/img/icona1.png" style="width: 3.5%; margin-right: 6em;" />
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto py-4 py-md-0" style=" width: 100%; font-size: 20px;">
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4  p-2 active">
+                                    <a class="nav-link " asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4  p-2" style="padding: 0 2em;">
+                                    <a class="nav-link" style="color:white;" asp-area="" asp-controller="Home" asp-action="ChiSiamo">Chi siamo</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4  p-2">
+                                    <a class="nav-link" style="color:white;" asp-area="" asp-controller="Home" asp-action="ComeFunziona">Come funziona Klinik</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4  p-2" style="padding: 0 2em;">
+                                    <a class="nav-link" style="color:white;" asp-area="" asp-controller="Home" asp-action="DiconoDiNoi">Dicono di noi</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4  p-2">
+                                    <a class="nav-link" style="color:white;" asp-area="" asp-controller="Home" asp-action="DoveSiamo">Dove siamo</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4  p-2" style="padding: 0 2em;">
+                                    <a class="nav-link" style="color:white;" asp-area="" asp-controller="Home" asp-action="Contatti">Contatti</a>
+                                </li>
+
+                                @*------ Accedi + icona dell'user ------*@
+
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4 ms-auto p-2" style="display: flex; align-items: baseline;">
+                                    <i class="fa-regular fa-circle-user"></i>
+                                    <a class="nav-link" style="color:white;" data-toggle="modal" data-target=".bd-modal">Accedi o Registrati</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @* Popup login  *@
+
+    <div class="modal fade bd-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <form id="form1" runat="server" class="d-flex align-items-center justify-content-center h-100 modal-dialog my-0">
+            <div class="card px-3 rounded-4 modal-content" style="background-color: #305580;">
+                <div class="my-5 card-image-top text-center">
+                    <img src="~/img/logo3.png" class="w-50" />
+                </div>
+
+                @*  <%-- Panel LOGIN --%> *@
+                <div id="panelLogin" class="form-floating mb-4">
+                    <div class="form-floating mb-3 mx-auto loginInput">
+                        <input type="email" id="txtUSR" class="form-control" placeholder="name@example.com" required="true"></input>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                    <div class="form-floating mx-auto loginInput">
+                        <input id="txtPWD" type="password" class="form-control" placeholder="Password" required="true"></asp:TextBox>
+                        <label for="floatingPassword">Password</label>
+                    </div>
+                </div>
+                
+                @* <%-- Panel Recupera Password --%> *@
+                <div id="panelRecuperaPWD" class="form-floating mb-4" hidden>
+                    <div class="form-floating mb-3 mx-auto loginInput">
+                        <input id="txtMail" class="form-control" placeholder="name@example.com" type="email"></input>
+                        <label for="floatingInput">Email address</label>
+                    </div>
+                </div>
+
+                @* <%-- Panel Registrazione Utente --%> *@
+                <div id="panelRegistra" class="form-floating mb-4" hidden>
+                    <div class="form-floating mb-3 mx-auto loginInput">
+                        <input id="txtRegistraMail"  class="form-control" placeholder="name@example.com" type="email"></input>
+                        <label for="txtRegistraMail">Email address</label>
+                    </div>
+                    <div class="form-floating mb-3 mx-auto loginInput">
+                        <input id="txtRegistraPWD" class="form-control" placeholder="password" type="password"></input>
+                        <label for="txtRegistraPWD">Password</label>
+                    </div>
+                    <div class="form-floating mb-3 mx-auto loginInput">
+                        <input id="txtRegistraConfermaPWD" class="form-control" placeholder="password" type="password"></input>
+                        <label for="txtRegistraConfermaPWD">Conferma Password</label>
+                    </div>
+                </div>
+
+                @* <%-- Label Errore generico --%> *@
+                <div class="form-floating mb-4 text-center">
+                    <label class="text-white text-center"></asp:Label>
+                </div>
+
+                <div class="text-center mt-3 mb-4">
+                    @* <%-- Bottone Accesso Login --%> *@
+                    <div class="form-floating mb-4">
+                        <button class="btn btn-primary btn-lg">Accedi</button>
+                    </div>
+                    @* <%-- Bottone Recupera Password --%> *@
+                    <div class="form-floating mb-4" hidden>
+                        <button class="btn btn-primary btn-lg">Recupera Password</button>
+                    </div>
+
+                    @* <%-- Bottone Registrati --%> *@
+                    <div class="form-floating mb-4" hidden>
+                        <button class="btn btn-primary btn-lg">Registrati</button>
+                    </div>
+                </div>
+
+                @* <%-- Link registrazione e recupero password --%> *@
+                <div class="row text-center">
+                    <div class="col mb-3">
+                        <div class="form-floating mb-4">
+                            <a class="text-white" onclick="Registra()">Registrati</a>
+                        </div>
+                    </div>
+
+                    <div class="col mb-3">
+                        <div class="form-floating mb-4">
+                            <a class="text-white" onclick="PopupRecuperaPWD()">Password dimenticata?</a>
+                        </div>
+                    </div>
+                    
+                    <div class="form-floating mb-4" hidden>
+                        <a class="text-white" onclick="Login()">Torna a Login</a>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+    @* ------------- *@
+
+    <div class="my-4 py-4"></div>
+
+    @* ---------------------- FINE NAVBAR --------------------*@
+
+    @* ---------------------- INIZIO MAIN --------------------*@
+
+    <div class="d-flex justify-content-center" id="DivMain">
+        @* ----- qui dentro c'era la classe "container" ------*@
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    @* <%-------------- INIZIO FOOTER ----------------%> *@
+
+    <footer class="text-center bg-body-tertiary text-muted">
+        <section class="">
+            <div class="container text-center text-md-start mt-3">
+
+                <div class="row mt-3 text-center">
+
+                    <div class="col-4 mx-auto mb-2 mt-2">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-2">
+                            <i class="fas fa-gem me-3"></i>KLINIK
+                        </h6>
+                        <p>
+                            Il tuo centro ospedaliero di fiducia, dove la cura e l'innovazione si incontrano per garantire il benessere completo dei pazienti.
+                        </p>
+                    </div>
+                    @* <%-- CONTATTI --%> *@
+
+                    <div class="col-4 mx-auto mb-md-0 mb-2 mt-2">
+
+                        <h6 class="text-uppercase fw-bold mb-2">Contatti</h6> @* margin bottom 4, l'ho modificato in 3 *@
+                        <p class="mb-2">
+                            <i class="fas fa-envelope me-3"></i>
+                            Mail: info@example.com
+                        </p>
+                        <p class="mb-1">
+                            <i class="fas fa-phone me-3"></i>
+                            Telefono: + 01 234 567 88
+                        </p>
+
+                    </div>
+
+                    @* <%-- SEDI --%> *@
+
+                    <div class="col-4 mx-auto mb-2 mt-2" style="max-width: 13em;">
+
+                        <h6 class="text-uppercase fw-bold mb-2">
+                            Sedi
+                        </h6>
+                        <div style="display:flex; justify-content: space-between;">
+                            <div>
+                                <p class="mb-1">
+                                    Torino
+                                </p>
+                                <p class="mb-1">
+                                    Milano
+                                </p>
+                            </div>
+                            <div>
+                                <p class="mb-1">
+                                    Ivrea
+                                </p>
+                                <p class="mb-1">
+                                    Leggiuno
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4 mx-auto mb-2">
+                        <!-- Content -->
+                        <h6 class="text-uppercase fw-bold mb-2">
+                            &copy; 2024 - KLINIK -<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a asp-area="" asp-controller="Home" asp-action="Cookies">Cookies</a>
+                        </h6>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+
+    </footer>
+
+
+    @* ----- Script del footer ----- *@
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+
+    @* <%-------------- FINE FOOTER ----------------%> *@
+
+    @* <%-------------- SCRIPT JQUERY, BOOTSTRAP ----------------%> *@
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

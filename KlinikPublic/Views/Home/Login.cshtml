@@ -1,0 +1,52 @@
+﻿
+
+
+
+<form id="form1" runat="server" class="d-flex align-items-center justify-content-center h-100">
+
+    <div class="mt-5 card px-3 py-5 rounded-4 mb-5" style="background-color: #305580;">
+        <div class="mb-5 card-image-top text-center">
+            <img src="~/img/logo3.png" class="w-50" />
+        </div>
+
+        @*  <%-- Panel LOGIN --%> *@
+        <div class="form-floating mb-4">
+            <div class="form-floating mb-3 mx-auto loginInput">
+                <input type="email" ID="txtUSR" class="form-control" placeholder="name@example.com" required="true"></input>
+                <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mx-auto loginInput">
+                <input type="password" class="form-control" placeholder="Password" required="true"></asp:TextBox>
+                <label for="floatingPassword">Password</label>
+            </div>
+        </div>
+
+        @* <%-- Label Errore generico --%> *@
+        <div class="form-floating mb-4 text-center">
+            <label class="text-white text-center"></asp:Label>
+        </div>
+
+        <div class="text-center mt-3 mb-4">
+            @* <%-- Bottone Accesso Login --%> *@
+            <div class="form-floating mb-4">
+                <button class="btn btn-primary btn-lg">Accedi</button>
+            </div>
+        </div>
+
+        @* <%-- Link registrazione e recupero password --%> *@
+        <div class="row text-center">
+            <div class="col mb-3">
+                <div class="form-floating mb-4">
+                    <a class="text-white" asp-action="Registrati">Registrati</a>
+                </div>
+            </div>
+
+            <div class="col mb-3">
+                <div class="form-floating mb-4">
+                    <a class="text-white" asp-action="RecuperaPassword">Password dimenticata?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+

@@ -1,0 +1,146 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@* <%-------------- DIV CONTENENTE TUTTO (tranne l'ultimo div) ----------------%> *@
+<div id="ScondaDiv" class="gap-5 d-flex flex-row justify-content-evenly mt-4">
+
+
+    @* <%-------------- LOGO E SLOGAN ----------------%> *@
+    <div class="my-4 pt-3" style="text-align: center;">
+        <div>
+            <img src="~/img/logo3.png" style="width: 22em;" />
+        </div>
+        <div>
+            <p style="padding-top: 0.4em; color: #b83431; font-size: 1.7em; font-weight: bold;">Alla vostra salute.</p>
+        </div>
+        <div style="width: 23em;color: #305580;font-size: 18px; margin-top:4em;">
+            <p style=" text-align: justify;text-justify: distribute;">
+                <b>
+                    Un centro di riferimento nel campo dell'innovazione sanitaria con sedi in tutto il mondo. Klinik è il luogo in cui competenze scientifiche e tecniche, sensibilità umana e etica, diventano un motivante impegno al servizio di tutti, per garantire cure eccellenti e accessibili all’intera comunità.
+                </b>
+            </p>
+        </div>
+    </div>
+
+
+    @* --------------------CARD PRESE DA INTERNET------------------------  *@
+
+    @* ------- Div contenitore di card e carousel -------- *@
+    <div id="CardECarousel" class="ms-auto" style="display: flex; flex-direction: column-reverse; align-items: center;">
+
+        @* -------- Div contenitore delle card -------- *@
+        <div style="max-width: 70em;">
+            <row class="d-flex justify-content-center flex-wrap gap-3">
+
+                <column class="col-3 col-lg-3 d-flex">
+                    <card class="card shadow my-4 pt-3 d-flex align-items-center">
+                        <i class="fa-solid fa-stethoscope card-img-top d-block fa-5x py-3 text-dark" style="width: 34%;"></i>
+                        <div class="card-body" style="text-align: center;">
+                            <h5 class="card-title"><strong>Visite</strong></h5>
+                            <p class="card-text">
+                                Esperienza medica professionale, confortevole e accurata per la tua visita.
+                            </p>
+                        </div>
+                    </card>
+                </column>
+
+                <column class="col-3 col-lg-3 d-flex">
+                    <card class="card shadow my-4 pt-3 align-self-stretch d-flex align-items-center">
+                        <i class="card-img-top d-block fa-solid fa-droplet fa-5x py-3 text-dark" style="width: 23%;"></i>
+                        <div class="card-body" style="text-align: center;">
+                            <h5 class="card-title"><strong>Analisi</strong></h5>
+                            <p class="card-text">
+                                Approfondita valutazione clinica per diagnosi accurata e trattamento efficace.
+                            </p>
+                        </div>
+                    </card>
+                </column>
+
+                <column class="col-3 col-lg-3 d-flex">
+                    <card class="card shadow my-4 pt-3 align-self-stretch d-flex align-items-center">
+                        <i class=" card-img-top d-block fa-solid fa-x-ray fa-5x py-3 text-dark" style="width: 31%;"></i>
+                        <div class="card-body" style="text-align: center;">
+                            <h5 class="card-title"><strong>Radiologie</strong></h5>
+                            <p class="card-text">
+                                Esperti radiologi: diagnosi precisa, tecnologia all'avanguardia, cura pazienti con precisione.
+                            </p>
+                        </div>
+                    </card>
+                </column>
+
+            </row>
+        </div>
+        @* --------------------FINE CARD PRESE DA INTERNET------------------------  *@
+
+
+        @*---------------------INIZIO CAROUSEL PRESO DA INTERNET-------------------- *@
+
+        @* Div contenitore del carousel *@
+        <div id="carouselExampleIndicators" class="carousel slide" style="width: 34em;">
+
+            @* BOTTONI PRECEDENTE/SUCCESSIVO *@
+
+            <button class="carousel-control-prev" type="button" style="left: -5em;" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" style="color: red" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" style="right: -5em;" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+
+            @* SLIDE *@
+
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            @* CONTENUTO DEL CAROUSEL (card con immagini e scritte) *@
+
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <card class="card shadow my-4 pt-3 align-self-stretch d-flex flex-row mb 3">
+                        <img src="~/img/carousel3.jpg" style="margin: 0em 1em 1em 1em; border-radius: 4px; width: 13em;" />
+                        <div class="card-body" style="text-align: center;">
+                            <h5 class="card-title"><strong>Settimana mondiale delle vaccinazioni</strong></h5>
+                            <p class="card-text">
+                                Vaccinazione gratuita per Yersinia pestis, è sicuro ed efficace e con due dosi garantisce protezione e riduce le complicanze del quasi 100%.
+                            </p>
+                        </div>
+                    </card>
+                </div>
+
+
+                <div class="carousel-item">
+                    <card class="card shadow my-4 pt-3 align-self-stretch d-flex flex-row mb 3">
+                        <img src="~/img/carousel1.jpg" style="margin: 0em 1em 1em 1em; border-radius: 4px; width: 13em;" />
+                        <div class="card-body" style="text-align: center;">
+                            <h5 class="card-title"><strong>Radiologie</strong></h5>
+                            <p class="card-text">
+                                La ricerca in radiologia all'avanguardia del nostro istituto medico rivoluziona la diagnosi, migliorando cure personalizzate e risultati.
+                            </p>
+                        </div>
+                    </card>
+                </div>
+
+                <div class="carousel-item">
+                    <card class="card shadow my-4 pt-3 align-self-stretch d-flex flex-row mb 3">
+                        <img src="~/img/carousel2.jpg" style="margin: 0em 1em 1em 1em; border-radius: 4px; width: 13em;" />
+                        <div class="card-body" style="text-align: center;">
+                            <h5 class="card-title"><strong>Prevenzioni</strong></h5>
+                            <p class="card-text">
+                                Scopri come la precoce diagnosi e il trattamento del retinoblastoma possono salvare la vista e la vita dei bambini, promuovendo la consapevolezza e la prevenzione.
+                            </p>
+                        </div>
+                    </card>
+                </div>
+
+            </div>
+
+        </div>
+        @*---------------------FINE CAROUSEL PRESO DA INTERNET-------------------- *@
+    </div>
+</div>

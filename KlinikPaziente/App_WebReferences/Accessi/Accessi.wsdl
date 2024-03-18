@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:tns="http://tempuri.org/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="Login">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usr" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="pwd" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LoginResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="LoginResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificaPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="NuovaPassword" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ModificaPasswordResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="RecuperaPassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserMail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RecuperaPasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RecuperaPasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Registra">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Genere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indirizzo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CAP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Citta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Provincia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegistraResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="PazientiSelectId">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPaziente" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiSelectIdResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="PazientiSelectIdResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MailEsistente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UserMail" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="MailEsistenteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="MailEsistenteResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiModifica">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="idPaziente" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="UserMail" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Password" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="DataNascita" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Cognome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nome" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Genere" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CodFiscale" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Indirizzo" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="CAP" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Citta" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Provincia" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Telefono" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PazientiModificaResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="LoginSoapIn">
+    <wsdl:part name="parameters" element="tns:Login" />
+  </wsdl:message>
+  <wsdl:message name="LoginSoapOut">
+    <wsdl:part name="parameters" element="tns:LoginResponse" />
+  </wsdl:message>
+  <wsdl:message name="ModificaPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ModificaPassword" />
+  </wsdl:message>
+  <wsdl:message name="ModificaPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ModificaPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaPasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:RecuperaPassword" />
+  </wsdl:message>
+  <wsdl:message name="RecuperaPasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:RecuperaPasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegistraSoapIn">
+    <wsdl:part name="parameters" element="tns:Registra" />
+  </wsdl:message>
+  <wsdl:message name="RegistraSoapOut">
+    <wsdl:part name="parameters" element="tns:RegistraResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiSelectIdSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiSelectId" />
+  </wsdl:message>
+  <wsdl:message name="PazientiSelectIdSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiSelectIdResponse" />
+  </wsdl:message>
+  <wsdl:message name="MailEsistenteSoapIn">
+    <wsdl:part name="parameters" element="tns:MailEsistente" />
+  </wsdl:message>
+  <wsdl:message name="MailEsistenteSoapOut">
+    <wsdl:part name="parameters" element="tns:MailEsistenteResponse" />
+  </wsdl:message>
+  <wsdl:message name="PazientiModificaSoapIn">
+    <wsdl:part name="parameters" element="tns:PazientiModifica" />
+  </wsdl:message>
+  <wsdl:message name="PazientiModificaSoapOut">
+    <wsdl:part name="parameters" element="tns:PazientiModificaResponse" />
+  </wsdl:message>
+  <wsdl:portType name="AccessiSoap">
+    <wsdl:operation name="Login">
+      <wsdl:input message="tns:LoginSoapIn" />
+      <wsdl:output message="tns:LoginSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ModificaPassword">
+      <wsdl:input message="tns:ModificaPasswordSoapIn" />
+      <wsdl:output message="tns:ModificaPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaPassword">
+      <wsdl:input message="tns:RecuperaPasswordSoapIn" />
+      <wsdl:output message="tns:RecuperaPasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Registra">
+      <wsdl:input message="tns:RegistraSoapIn" />
+      <wsdl:output message="tns:RegistraSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiSelectId">
+      <wsdl:input message="tns:PazientiSelectIdSoapIn" />
+      <wsdl:output message="tns:PazientiSelectIdSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="MailEsistente">
+      <wsdl:input message="tns:MailEsistenteSoapIn" />
+      <wsdl:output message="tns:MailEsistenteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PazientiModifica">
+      <wsdl:input message="tns:PazientiModificaSoapIn" />
+      <wsdl:output message="tns:PazientiModificaSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="AccessiSoap" type="tns:AccessiSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaPassword">
+      <soap:operation soapAction="http://tempuri.org/ModificaPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaPassword">
+      <soap:operation soapAction="http://tempuri.org/RecuperaPassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registra">
+      <soap:operation soapAction="http://tempuri.org/Registra" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiSelectId">
+      <soap:operation soapAction="http://tempuri.org/PazientiSelectId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailEsistente">
+      <soap:operation soapAction="http://tempuri.org/MailEsistente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiModifica">
+      <soap:operation soapAction="http://tempuri.org/PazientiModifica" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="AccessiSoap12" type="tns:AccessiSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="Login">
+      <soap12:operation soapAction="http://tempuri.org/Login" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ModificaPassword">
+      <soap12:operation soapAction="http://tempuri.org/ModificaPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RecuperaPassword">
+      <soap12:operation soapAction="http://tempuri.org/RecuperaPassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Registra">
+      <soap12:operation soapAction="http://tempuri.org/Registra" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiSelectId">
+      <soap12:operation soapAction="http://tempuri.org/PazientiSelectId" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="MailEsistente">
+      <soap12:operation soapAction="http://tempuri.org/MailEsistente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PazientiModifica">
+      <soap12:operation soapAction="http://tempuri.org/PazientiModifica" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Accessi">
+    <wsdl:port name="AccessiSoap" binding="tns:AccessiSoap">
+      <soap:address location="http://klinik.brovia.it/Accessi.asmx" />
+    </wsdl:port>
+    <wsdl:port name="AccessiSoap12" binding="tns:AccessiSoap12">
+      <soap12:address location="http://klinik.brovia.it/Accessi.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

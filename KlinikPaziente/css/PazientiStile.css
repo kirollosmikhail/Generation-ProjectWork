@@ -1,0 +1,130 @@
+﻿.loginInput {
+    width: 90%;
+}
+
+h1 {
+    color: #305580; /* Colore del testo */
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+h2 {
+    color: #305580; /* Colore del testo */
+    font-size: 24px;
+    font-weight: normal;
+    margin-top: 0;
+}
+
+.form-floating {
+    min-width: fit-content;
+}
+
+    .form-floating .form-select,
+    .form-floating .form-control {
+        border: solid 3px rgba(48, 85, 128, 0.7);
+        min-height: 4em !important;
+    }
+
+
+.btn {
+    height: 58px;
+}
+
+/*TABLE*/
+th {
+    background-color: #3e6ea6 !important;
+    color: white !important;
+}
+
+table .btn {
+    height: auto;
+}
+
+
+.myModal {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1001;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.formLoginSmall {
+    width: 6em !important;
+}
+
+.formLoginMedium {
+    width: 14em !important;
+}
+
+.formLoginLarge {
+    width: 18em !important;
+}
+
+.hidden {
+    display: none;
+}
+
+#inserisciPaziente hr {
+    margin: 0px;
+}
+
+.Popup {
+    min-width: 70% !important;
+    min-height: 95%;
+}
+
+.titoloNavbar {
+    text-wrap: nowrap;
+}
+
+    .titoloNavbar:after {
+        background: none repeat scroll 0 0 transparent;
+        /*bottom: 0;*/
+        content: "";
+        display: block;
+        height: 2px;
+        left: 50%;
+        position: relative;
+        background: #0d6efd;
+        transition: width 0.3s ease 0s, left 0.3s ease 0s;
+        width: 0;
+    }
+
+/*BOTTONE MODIFICA DATI*/
+#ContentPlaceHolder1_btnConfermaIns {
+    width: 13em;
+}
+
+/*BOTTONE MODIFICA PASSOWRD*/
+#ContentPlaceHolder1_btnPW {
+    /*width: 13em;*/
+}
+
+body {
+    margin-bottom: 0 !important;
+}
+
+#lblNome {
+    color: white;
+}
+
+#ContentPlaceHolder1_pnlMedico {
+    min-width: 10em;
+    margin-right: 1em;
+}
+
+table .btn {
+    height: auto;
+}
+
+.card-header {
+    background-color: #305580 !important;
+}
+
+    .card-header h2 {
+        color: white !important;
+    }

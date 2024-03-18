@@ -1,0 +1,77 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34330.188
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KlinikPublic", "KlinikPublic.csproj", "{4643DB6D-1AEF-4072-BEBF-27C70A9F91DC}"
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "KlinikPaziente", "..\KlinikPaziente\", "{71F44BC1-0664-4E86-B8A2-C71C9638C311}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51592"
+		Debug.AspNetCompiler.PhysicalPath = "..\KlinikPaziente\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51592\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51592"
+		Release.AspNetCompiler.PhysicalPath = "..\KlinikPaziente\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51592\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51592"
+		SlnRelativePath = "..\KlinikPaziente\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Klinik", "..\Klinik\", "{24DD4F00-A2EA-45B2-9F15-C90A74A700FC}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.7.2"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_51600"
+		Debug.AspNetCompiler.PhysicalPath = "..\Klinik\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51600\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_51600"
+		Release.AspNetCompiler.PhysicalPath = "..\Klinik\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_51600\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "51600"
+		SlnRelativePath = "..\Klinik\"
+		DefaultWebSiteLanguage = "Visual C#"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4643DB6D-1AEF-4072-BEBF-27C70A9F91DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4643DB6D-1AEF-4072-BEBF-27C70A9F91DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4643DB6D-1AEF-4072-BEBF-27C70A9F91DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4643DB6D-1AEF-4072-BEBF-27C70A9F91DC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{71F44BC1-0664-4E86-B8A2-C71C9638C311}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F44BC1-0664-4E86-B8A2-C71C9638C311}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71F44BC1-0664-4E86-B8A2-C71C9638C311}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{71F44BC1-0664-4E86-B8A2-C71C9638C311}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{24DD4F00-A2EA-45B2-9F15-C90A74A700FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DD4F00-A2EA-45B2-9F15-C90A74A700FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{24DD4F00-A2EA-45B2-9F15-C90A74A700FC}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{24DD4F00-A2EA-45B2-9F15-C90A74A700FC}.Release|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D7EAB905-6A42-454F-849B-75127C180E82}
+	EndGlobalSection
+EndGlobal

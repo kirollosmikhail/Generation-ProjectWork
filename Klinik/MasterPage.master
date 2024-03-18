@@ -1,0 +1,181 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.png">
+    <!--SCRIPT PER ICONE-->
+    <script src="https://kit.fontawesome.com/8ef5b2efcb.js" crossorigin="anonymous"></script>
+    <%--NAVBAR--%>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.0/css/all.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js" type="text/javascript"></script>
+    <%--BOOTSTRAP--%>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <%--CSS--%>
+    <link href="css/style.css" rel="stylesheet" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <script>
+            const mobileScreen = window.matchMedia("(max-width: 990px )");
+            $(document).ready(function () {
+                $(".dashboard-nav-dropdown-toggle").click(function () {
+                    $(this).closest(".dashboard-nav-dropdown")
+                        .toggleClass("show")
+                        .find(".dashboard-nav-dropdown")
+                        .removeClass("show");
+                    $(this).parent()
+                        .siblings()
+                        .removeClass("show");
+                });
+                $(".menu-toggle").click(function () {
+                    if (mobileScreen.matches) {
+                        $(".dashboard-nav").toggleClass("mobile-show");
+                    } else {
+                        $(".dashboard").toggleClass("dashboard-compact");
+                    }
+                });
+            });
+        </script>
+
+
+        <div class='dashboard'>
+            <div class="dashboard-nav">
+                <header>
+                    <a href="#!" class="menu-toggle"><i class="fa-solid fa-bars"></i></a>
+                    <a href="#" class="brand-logo">
+                        <i class="fa-brands fa-korvue"></i><span>KLINIK</span></a>
+                </header>
+                <nav class="dashboard-nav-list">
+
+                    <%-- ZONA CONTABILITA' --%>
+                    <asp:Panel ID="pnlEconomia" runat="server" Visible="False">
+                        <div class='dashboard-nav-dropdown show'>
+                            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle active"><i class="fas fa-screwdriver-wrench"></i>Contabilità</a>
+                            <div class='dashboard-nav-dropdown-menu'>
+                                <a href="Rendicontazione.aspx" class="dashboard-nav-item"><i class="fas fa-home"></i>Rendicontazione</a>
+                                <a href="Tariffario.aspx" class="dashboard-nav-item"><i class="fas fa-money-check-dollar"></i>Tariffario</a>
+                                <a href="StatoPagamenti.aspx" class="dashboard-nav-item"><i class="fas fa-credit-card"></i>Pagamenti</a>
+                            </div>
+                        </div>
+                    </asp:Panel>
+
+                    <%-- ZONA SEGRETERIA --%>
+                    <asp:Panel ID="pnlPersonale" runat="server" Visible="False">
+                        <div class='dashboard-nav-dropdown show'>
+                            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle active"><i class="fas fa-screwdriver-wrench"></i>Segreteria</a>
+                            <div class='dashboard-nav-dropdown-menu'>
+                                <a href="Prenotazioni.aspx" class="dashboard-nav-item"><i class="fas fa-inbox"></i>Prenotazioni</a>
+                                <%--<a href="Tariffario.aspx" class="dashboard-nav-item"><i class="fas fa-money-check-dollar"></i>Tariffario</a>--%>
+                                <a href="StatoPagamenti.aspx" class="dashboard-nav-item"><i class="fas fa-credit-card"></i>Pagamenti</a>
+                                <a href="listaPazienti.aspx" class="dashboard-nav-item"><i class="fas fa-user"></i>Pazienti</a>
+                                <a href="listaSanitari.aspx" class="dashboard-nav-item"><i class="fas fa-user-doctor"></i>Sanitari</a>
+                                <%--<a href="listaPersonale.aspx" class="dashboard-nav-item"><i class="fas fa-user-tie"></i>Personale</a>--%>
+                            </div>
+                        </div>
+                    </asp:Panel>
+
+
+                    <%-- ZONA MEDICI --%>
+                    <asp:Panel ID="pnlMedici" runat="server" Visible="False">
+                        <div class='dashboard-nav-dropdown show'>
+                            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle active"><i class="fas fa-screwdriver-wrench"></i>Medicina</a>
+                            <div class='dashboard-nav-dropdown-menu'>
+                                <a href="Calendario.aspx" class="dashboard-nav-item"><i class="fas fa-calendar-days"></i>Calendario</a>
+                                <a href="HomeMedici.aspx" class="dashboard-nav-item"><i class="fas fa-stethoscope"></i>Prestazioni</a>
+                                <a href="CartellaPaziente.aspx" class="dashboard-nav-item"><i class="fas fa-folder-open"></i>Cartelle Pazienti</a>
+                                <a href="Economia.aspx" class="dashboard-nav-item"><i class="fas fa-chart-line"></i>Economia</a>
+                            </div>
+                        </div>
+                    </asp:Panel>
+
+
+                    <%-- ZONA ANALISTI --%>
+                    <asp:Panel ID="pnlAnalisti" runat="server" Visible="False">
+                        <div class='dashboard-nav-dropdown show'>
+                            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle active"><i class="fas fa-screwdriver-wrench"></i>Analisi</a>
+                            <div class='dashboard-nav-dropdown-menu'>
+                                <a href="Calendario.aspx" class="dashboard-nav-item"><i class="fas fa-calendar-days"></i>Calendario</a>
+                                <a href="HomeMedici.aspx" class="dashboard-nav-item"><i class="fas fa-stethoscope"></i>Prestazioni</a>
+                                <a href="CartellaPaziente.aspx" class="dashboard-nav-item"><i class="fas fa-folder-open"></i>Cartelle Pazienti</a>
+                                <a href="Economia.aspx" class="dashboard-nav-item"><i class="fas fa-chart-line"></i>Economia</a>
+                            </div>
+                        </div>
+                    </asp:Panel>
+
+
+                    <%-- ZONA ADMIN --%>
+                    <asp:Panel ID="pnlAdmin" runat="server" Visible="False">
+                        <div class='dashboard-nav-dropdown show'>
+                            <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle active"><i class="fas fa-screwdriver-wrench"></i>Admin</a>
+                            <div class='dashboard-nav-dropdown-menu'>
+                                <a href="Log_Operazioni.aspx" class="dashboard-nav-dropdown-item dashboard-nav-item"><i class="fa-solid fa-gears"></i>Operazioni</a>
+                                <a href="Log_Accessi.aspx" class="dashboard-nav-dropdown-item dashboard-nav-item"><i class="fa-solid fa-unlock"></i>Accessi</a>
+                                <%--<a href="listaPazienti.aspx" class="dashboard-nav-item"><i class="fas fa-user"></i>Pazienti</a>
+                                <a href="listaSanitari.aspx" class="dashboard-nav-item"><i class="fas fa-user-doctor"></i>Sanitari</a>--%>
+                                <a href="listaPersonale.aspx" class="dashboard-nav-item"><i class="fas fa-user-tie"></i>Personale</a>
+                            </div>
+                        </div>
+                    </asp:Panel>
+
+
+
+                    <%-- DROPDOWN DA UTILIZZARE SE SERVE --%>
+
+                    <%--<div class='dashboard-nav-dropdown'>
+                        <a href="#!" class="dashboard-nav-item dashboard-nav-dropdown-toggle"><i class="fas fa-photo-video"></i>Media</a>
+                        <div class='dashboard-nav-dropdown-menu'>
+                            <a href="#" class="dashboard-nav-dropdown-item">All</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Recent</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Images</a>
+                            <a href="#" class="dashboard-nav-dropdown-item">Video</a>
+                        </div>
+                    </div>--%>
+
+
+
+
+                    <div class="nav-item-divider"></div>
+                    <a href="Login.aspx" class="dashboard-nav-item"><i class="fas fa-sign-out-alt"></i>Logout</a>
+                </nav>
+            </div>
+
+
+
+            <div class='dashboard-app'>
+                <header class="dashboard-toolbar d-flex">
+                    <a href="#!" class="menu-toggle"><i class="fas fa-bars"></i></a>
+                    <div>
+                        <asp:ContentPlaceHolder ID="ContentPlaceHoldertitolo" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </div>
+
+                    
+                    <asp:Label ID="lblUtente" runat="server" Text=""></asp:Label>
+                    <asp:Literal ID="FotoProfilo" runat="server">
+
+                    </asp:Literal> 
+                    
+                    
+
+                </header>
+                <div class="Container">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                    </asp:ContentPlaceHolder>
+                </div>
+            </div>
+        </div>
+
+
+    </form>
+</body>
+</html>
