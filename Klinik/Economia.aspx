@@ -17,7 +17,7 @@
             <asp:TextBox runat="server" class="form-control" ID="CalendarioFiltro" TextMode="Month" AutoPostBack="true" OnTextChanged="CalendarioFiltro_TextChanged"></asp:TextBox>
             <label id="lblFiltra" for="CalendarioFiltro" text="Filtra per Mese: ">Filtra per Mese</label>
         </asp:Panel>
-
+            
         <asp:LinkButton Style="width: 4em; height: 4em; text-decoration: none; color: inherit;" ID="Mesepiu" runat="server" OnClick="Mesepiu_Click" class="d-flex justify-content-around">    <i  style="font-size: 3em; color:#3e6ea6; background-color:transparent" class="fas fa-arrow-right"></i> <!-- Aggiungi l'icona Font Awesome come testo del LinkButton --></asp:LinkButton>
         </div>
         <asp:Panel runat="server" class="form-floating mb-4">
