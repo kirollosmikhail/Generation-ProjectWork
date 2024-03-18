@@ -29,6 +29,7 @@ public class Gestore : IHttpHandler
         context.Response.BinaryWrite(Doc);
         context.Response.Flush();
         context.Response.End();
+
     }
 
     public bool IsReusable
